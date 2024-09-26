@@ -1,5 +1,6 @@
 package com.tesla.crud;
 
+import com.tesla.crud.person.Person;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,18 +16,17 @@ public class CrudApplication {
 		SpringApplication.run(CrudApplication.class, args);
 	}
 @GetMapping(path="/")
-	public List<String> getNames() {
+	public List<Person> getNames() {
 	return List.of(
-			"Ana",
-			"Carlos",
-			"Juan",
-			"María",
-			"Luis",
-			"Sofía",
-			"Pedro",
-			"Elena",
-			"Gabriel",
-			"Laura"
+			new Person(
+					123L,
+					"Diego",
+					"Hernandez",
+					36,
+					101010,
+					"M",
+					"diego123@gmail.com"
+			)
 	);
 }
 
